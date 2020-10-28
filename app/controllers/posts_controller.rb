@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.active.page(params[:page]).sorted_by_newest
-    @all_tags = Tag.all
+    @all_tags = Tag.joins(:posts)
   end
 
   def new

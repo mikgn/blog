@@ -1,0 +1,6 @@
+.all-tag-posts.text-center
+  .title
+    span.results Results for:
+    span.tag-name.ml-1 ##{@tag.name}
+.questions-on-index
+  = render partial: 'posts/post', collection: @tag_posts

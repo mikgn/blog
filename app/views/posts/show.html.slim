@@ -7,6 +7,12 @@
     = @post.title
   .post_body
     = @post.body
+
+  - if @post.tags
+    .tags-block.m-1
+      - @post.tags.each do |tag|
+        span.mr-2.tag-title
+          = link_to '#'"#{tag.name}", tag_path(tag.name)
   .buttons
     - if current_user == @post.user
       = link_to 'edit post', edit_post_path(@post), class: "btn btn-sm btn-outline-dark ml-2"
