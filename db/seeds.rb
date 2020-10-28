@@ -26,6 +26,21 @@ last_5_posts.each do |post|
   end
 end
 
+
 puts "100 users created"
 puts "1000 posts created"
 puts "comments created"
+
+# hashtag checking
+
+post = Post.create!(
+  title: '#hashtag nothashtag',
+  body: '#otherhashtag othernothashtag',
+  user_id: 1
+)
+
+post = Post.create!(
+  title: '#хештег нехештег',
+  body: '#другойхештег другойнехештег',
+  user_id: 1
+)
