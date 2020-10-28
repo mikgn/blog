@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
   def users_comment?(comment)
     comment.user == current_user
   end
