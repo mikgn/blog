@@ -196,3 +196,19 @@
   font-size: 16px;
   color: #fff;
 }
+
+/*tag*/
+
+.title {
+  margin-bottom: 20px;
+}
+
+.tag-title a,
+.tag-name {
+  color: #DA70D6;
+}
+
+.tag-name,
+.results {
+  font-size: 22px;
+}
