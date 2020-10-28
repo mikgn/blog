@@ -1,0 +1,8 @@
+- if model.errors.any?
+  #error_explanation
+    p
+      span.errors-count
+        p errors: #{model.errors.count}
+    ul
+      - model.errors.full_messages.each do |message|
+        li.alert-text-color = message

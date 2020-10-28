@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Blog
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    .full-screen-height
+      .header
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.list-unstyled.main-nav
+              = link_to 'Home', root_path, class: "navbar-brand ml-4"
+              button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                span.navbar-toggler-icon
+              .collapse.navbar-collapse#navbarNav
+                - if current_user
+                  .create-event-btn
+                    = link_to 'New post', new_post_path, class: 'btn btn-primary'
+                .session-btns
+                  - if user_signed_in?
+                    = link_to 'My posts', current_user, class: "btn btn-outline-light"
+                    = link_to 'Edit profile', edit_user_path(current_user), class: "btn btn-outline-light ml-2"
+                    = link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light ml-2"
+                  - else
+                    = link_to 'Log in', new_user_session_path, class: "btn btn-outline-light mr-2"
+                    = link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-light"
+
+      .flash-block
+        .message
+          .notice
+            = notice
+          .alert
+            = alert
+      .container
+        = yield
+
+    .page-footer.mt-5
+      .text-center.py-2
+        = mail_to 'kogan.miha@gmail.com'
+          = image_tag 'mail.jpeg'
+        = link_to 'https://github.com/mikgn'
+          = image_tag 'github.jpeg'
+        = link_to 'https://www.linkedin.com/in/michamichael/'
+          = image_tag 'linkedin.jpeg'
+
+        span.copyright  © 2020 Copyright: Michael Kogan
