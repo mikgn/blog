@@ -1,0 +1,14 @@
+.post-block
+  span.post-user-name
+    - if post.user == current_user
+      = post.user.name
+    - else
+      = link_to post.user.name, user_path(post.user), class: 'username-link'
+  span.post-datetime
+    = post.created_at.strftime("%B %d %H:%M")
+  p.post-title
+    = link_to post.title, post_path(post)
+  .post_body
+    = post.body
+  .comments-count
+    = link_to "Comments: #{post.comments.size}", post_path(post)

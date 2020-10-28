@@ -1,0 +1,20 @@
+= form_with(model: @post, local: true) do |form|
+  = render partial: 'partials/form_errors', locals: { model: @post }
+  .form-group
+    = form.label :title
+    = form.text_field :title, class: 'form-control'
+  .form-group
+    = form.label :body
+    = form.text_area :body, class: 'form-control', rows: '4'
+  .form-group
+    = form.label :created_at
+    = form.datetime_field :created_at, class: 'form-control'
+  .form-group
+    / f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true
+    = form.radio_button(:state, "pending")
+    = form.label(:age_child, "do not publish")
+    = form.radio_button(:state, "active")
+    = form.label(:state, "publish")
+  .actions
+    = form.submit 'Save', class: "btn btn-sm btn-dark"
+    = link_to 'Back', :back, class: "btn btn-sm btn-outline-dark ml-2"

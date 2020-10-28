@@ -1,0 +1,20 @@
+- if @posts.any?
+  .hashtags-block
+
+
+  .posts
+    .posts-block
+        = render partial: 'post', collection: @posts, cached: true
+
+  .digg_pagination.d-flex.justify-content-center
+    = will_paginate @posts
+
+- else
+  .no-posts-block
+    h4 No posts yet
+    h4
+      span You can
+      | &nbsp;
+      span = link_to 'create', new_post_path
+      | &nbsp;
+      span your first post now
