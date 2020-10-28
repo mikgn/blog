@@ -3,11 +3,11 @@
   .form-group
     = form.label :name
     = form.text_field :name, class: 'form-control'
-  .form-group
+  .form-group.mt-3
     = form.label :email
     = form.text_field :email, class: 'form-control'
   .actions
-    = form.submit 'Save', class: 'btn btn-sm btn-dark'
-      = link_to 'Back', user_path, class: "btn btn-sm  btn-outline-dark ml-2"
+    = form.submit 'Save', class: 'btn btn-sm btn-dark mt-4'
+    = link_to 'Back', user_path, class: "btn btn-sm  btn-outline-dark ml-2 mt-4"
     - if controller_name == 'users'
-      = link_to 'Change passord', edit_user_registration_path, class: 'btn btn-sm btn-outline-danger ml-2'
+      = link_to 'Change passord', edit_user_registration_path, class: 'btn btn-sm btn-outline-danger ml-2 mt-4'

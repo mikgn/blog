@@ -1,6 +1,8 @@
-= render 'form', post: @post
+.form-block
+  h3 Edit post
+  = render 'form', post: @post
 
-.delete-block.alert-text-color
-  h4 Danger zone
-  = button_to 'Delete', post_path(@post), method: :delete,
-                  data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+  .delete-block.alert-text-color
+    h4 Danger zone
+    = button_to 'Delete', post_path(@post), method: :delete,
+                    data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'

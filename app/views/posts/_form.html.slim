@@ -3,18 +3,21 @@
   .form-group
     = form.label :title
     = form.text_field :title, class: 'form-control'
-  .form-group
+  .form-group.mt-3
     = form.label :body
     = form.text_area :body, class: 'form-control', rows: '4'
-  .form-group
+  .form-group.mt-3
     = form.label :created_at
     = form.datetime_field :created_at, class: 'form-control'
-  .form-group
-    / f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true
-    = form.radio_button(:state, "pending")
-    = form.label(:age_child, "do not publish")
-    = form.radio_button(:state, "active")
-    = form.label(:state, "publish")
+  .form-group.mt-3
+    span
+      = form.radio_button(:state, "pending")
+      span.ml-1
+        = form.label(:age_child, "do not publish")
+    span.ml-3
+      = form.radio_button(:state, "active")
+      span.ml-1
+        = form.label(:state, "publish")
   .actions
-    = form.submit 'Save', class: "btn btn-sm btn-dark"
-    = link_to 'Back', :back, class: "btn btn-sm btn-outline-dark ml-2"
+    = form.submit 'Save', class: "btn btn-xs btn-dark mt-3"
+    = link_to 'All posts', root_path, class: "btn btn-xs btn-outline-dark ml-2 mt-3"

@@ -3,7 +3,7 @@
     = @post.user.name
   span.post-datetime
     = @post.created_at.strftime("%B %d %H:%M")
-  p
+  p.w-b
     = @post.title
   .post_body
     = @post.body
@@ -15,7 +15,7 @@
           = link_to '#'"#{tag.name}", tag_path(tag.name)
   .buttons
     - if current_user == @post.user
-      = link_to 'edit post', edit_post_path(@post), class: "btn btn-sm btn-outline-dark ml-2"
+      = link_to 'Edit', edit_post_path(@post), class: "btn btn-xs btn-outline-dark mt-2"
 
 .comments-block
   -if @post.comments.count.positive?
@@ -24,7 +24,7 @@
       = render partial: 'comments/comment', collection: @post.comments.except(@new_comment)
   - else
     h5 No comments yet
-
-  .comments-form.mt-4
-    h6 New comment
-    = render partial: 'comments/form', locals: { comment: @new_comment }
+  .form-block-comment
+    .comments-form.mt-4
+      h6 New comment
+      = render partial: 'comments/form', locals: { comment: @new_comment }

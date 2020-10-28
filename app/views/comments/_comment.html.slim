@@ -3,11 +3,11 @@
     = link_to comment.user.name, user_path(comment.user)
     span.post-datetime
       = comment.created_at.strftime("%B %d %H:%M")
-    .comment-body
+    .comment-body.mt-2
       = comment.text
 
     - if user_can_edit_comment?(comment)
-        .buttons
-          = link_to 'Edit', edit_post_comment_path(comment.post, comment), class: "btn btn-sm btn-outline-dark ml-2"
+        .buttons.mt-2
+          = link_to 'Edit', edit_post_comment_path(comment.post, comment), class: "btn btn-xs btn-outline-dark mt-2"
           = link_to 'Delete', post_comment_path(comment.post, comment), method: :delete,
-                  data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-outline-danger ml-2"
+                  data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-outline-danger mt-2 ml-2"
