@@ -1,0 +1,15 @@
+.user-info
+  h3.text-center.pb-2 #{@user.name} posts
+- if @user.posts.any?
+  .user-posts
+    = render partial: 'posts/post', collection: @user.posts
+- else
+  .no-posts-block
+    h4 No posts yet
+    h4
+      span You can
+      | &nbsp;
+      span = link_to 'create', new_post_path
+      | &nbsp;
+      span your first post now
+
