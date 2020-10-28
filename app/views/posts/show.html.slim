@@ -24,6 +24,8 @@
       = render partial: 'comments/comment', collection: @post.comments.except(@new_comment)
   - else
     h5 No comments yet
+
+- if user_signed_in? 
   .form-block-comment
     .comments-form.mt-4
       h6 New comment
