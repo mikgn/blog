@@ -1,0 +1,6 @@
+= form_with(model: [@post, comment], local: true) do |form|
+  = render partial: 'partials/form_errors', locals: { model: comment }
+  .form-group
+    = form.text_area :text, class: 'form-control', rows: '3'
+  .actions
+    = form.submit 'Save', class: 'btn btn-dark btn-sm'
