@@ -34,13 +34,9 @@ puts "comments created"
 # hashtag checking
 
 post = Post.create!(
-  title: '#hashtag nothashtag',
-  body: '#otherhashtag othernothashtag',
+  title: '#hashtag title',
+  body: '#Lorem Ipsum is #simply dummy #text of the #printing and typesetting #industry',
   user_id: 1
 )
 
-post = Post.create!(
-  title: '#хештег нехештег',
-  body: '#другойхештег другойнехештег',
-  user_id: 1
-)
+puts 'hashtag post created'
