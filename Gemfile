@@ -17,16 +17,17 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'aasm'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-end
-
 group :development do
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
