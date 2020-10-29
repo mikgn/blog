@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         redirect_to @post, notice: 'Comment was successfully updated'
       else
-        render 'posts/show'
+        render :edit
       end
     end
   end
