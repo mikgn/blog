@@ -33,10 +33,16 @@ puts "comments created"
 
 # hashtag checking
 
-post = Post.create!(
+Post.create!(
   title: '#hashtag title',
   body: '#Lorem Ipsum is #simply dummy #text of the #printing and typesetting #industry',
   user_id: 1
 )
 
-puts 'hashtag post created'
+Post.create!(
+  title: 'hashtag #title',
+  body: 'Lorem #Ipsum is simply #dummy text of #the printing and #typesetting industry',
+  user_id: 1
+)
+
+puts '2 post with hashtags created'
