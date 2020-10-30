@@ -17,3 +17,7 @@
 /yarn-error.log
 
 .byebug_history
+
+config/cable.yml
+config/secrets.yml
+config/database.yml
