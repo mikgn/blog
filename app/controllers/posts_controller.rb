@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
-  before_action :set_current_user_posts, only: [:edit, :update, :destroy]
-  before_action :set_post, only: [:show]
+  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_current_user_posts, only: %i[edit update destroy]
+  before_action :set_post, only: :show
 
   def index
-    @posts = Post.active.page(params[:page]).sorted_by_newest
-    @all_tags = Tag.joins(:posts)
+    @posts = Post.active.sorted_by_newest.page(params[:page])
+    @all_tags = Tag.top30 # top(30)
   end
 
   def new
@@ -32,9 +32,9 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to post_path(@post), notice: 'Your post was successfully updated'
-     else
-       render :edit
-     end
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -54,6 +54,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :state, :created_at)
+    params.require(:post).permit(:title, :body, :active, :created_at)
   end
 end

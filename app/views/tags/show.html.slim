@@ -3,4 +3,7 @@
     span.results Results for:
     span.tag-name.ml-1 ##{@tag.name}
 .questions-on-index
-  = render partial: 'posts/post', collection: @tag.posts
+  = render partial: 'posts/post', collection: @posts
+
+.digg_pagination.d-flex.justify-content-center
+  = will_paginate @posts

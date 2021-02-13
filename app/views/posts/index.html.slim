@@ -3,7 +3,7 @@
     h5.text-center Find posts by tag:
     .hashtags-block.text-center
       - @all_tags.each do |tag|
-            span.ml-2 = link_to "##{tag.name}", tag_path(tag)
+        span.ml-2 = link_to "##{tag.name}", tag_path(tag)
 
   .posts
     .posts-block

@@ -13,11 +13,11 @@
     span
       = form.radio_button(:active, :false)
       span.ml-1
-        = form.label(:age_child, "do not publish")
+        = form.label(:active, "do not publish")
     span.ml-3
       = form.radio_button(:active, :true)
       span.ml-1
-        = form.label(:state, "publish")
+        = form.label(:active, "publish")
   .actions
     = form.submit 'Save', class: "btn btn-xs btn-dark mt-3"
     = link_to 'All posts', root_path, class: "btn btn-xs btn-outline-dark ml-2 mt-3"
