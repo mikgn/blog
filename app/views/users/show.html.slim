@@ -1,5 +1,7 @@
 .user-info
-  h3.text-center.pb-2 #{@user.name} posts
+  .user_avatar
+    = image_tag(@user.avatar.url)
+  h3.text-center.pb-2.mt-3 #{@user.name}
 - if @user.posts.any?
   .user-posts
     = render partial: 'posts/post', collection: @user.posts

@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 35 }
 
+  mount_uploader :avatar, AvatarUploader
+
   private
 
   def set_name

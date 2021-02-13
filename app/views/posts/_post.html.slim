@@ -1,13 +1,18 @@
 .post-block
-  span.post-user-name
-    - if post.user == current_user
-      = post.user.name
-    - else
-      = link_to post.user.name, user_path(post.user), class: 'username-link'
-  span.post-datetime
-    = post.created_at.strftime("%B %d %H:%M")
-  p.post-title
-    = link_to post.title, post_path(post)
+  .post-header
+    .div.user-mini-avatar
+      span
+        = image_tag(post.user.avatar.thumb)
+    .name-post-title
+      span.post-user-name
+        - if post.user == current_user
+          = post.user.name
+        - else
+          = link_to post.user.name, user_path(post.user), class: 'username-link'
+      span.post-datetime
+        = post.created_at.strftime("%B %d %H:%M")
+      p.post-title
+        = link_to post.title, post_path(post)
   .post_body
     = post.body
   -if post.tags

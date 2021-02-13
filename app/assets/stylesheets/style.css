@@ -111,6 +111,14 @@
   margin: 30px 0;
 }
 
+.post-header {
+  display: flex;
+}
+
+.name-post-title {
+  margin-left: 10px;
+}
+
 .no-posts-block {
   text-align: center;
 }
@@ -241,4 +249,10 @@
 .tag-name,
 .results {
   font-size: 22px;
+}
+
+/*avatar*/
+
+.user_avatar {
+  text-align: center;
 }
