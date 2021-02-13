@@ -14,7 +14,6 @@ gem 'slim'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 gem 'will_paginate', '~> 3.1.0'
-gem 'aasm'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
 group :development do

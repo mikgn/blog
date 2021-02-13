@@ -11,11 +11,11 @@
     = form.datetime_field :created_at, class: 'form-control'
   .form-group.mt-3
     span
-      = form.radio_button(:state, "pending")
+      = form.radio_button(:active, :false)
       span.ml-1
         = form.label(:age_child, "do not publish")
     span.ml-3
-      = form.radio_button(:state, "active")
+      = form.radio_button(:active, :true)
       span.ml-1
         = form.label(:state, "publish")
   .actions
