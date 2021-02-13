@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.active.sorted_by_newest.page(params[:page])
-    @all_tags = Tag.top30 # top(30)
+    @all_tags = Tag.top30
   end
 
   def new

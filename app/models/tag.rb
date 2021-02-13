@@ -6,9 +6,7 @@ class Tag < ApplicationRecord
   has_many :post_tags
   has_many :posts, through: :post_tags
 
-  scope :top30, lambda {
-    joins(:post_tags).group(:id).order('COUNT(post_tags) DESC').limit(25)
-  }
+  scope :top30, -> { order(post_tags_count: :desc).limit(25) }
 
   validates :name, presence: true, length: { maximum: 40 }
 
