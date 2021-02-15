@@ -269,6 +269,13 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   # ==> OmniAuth
+  config.omniauth :facebook,
+    Rails.application.secrets[:omniauth][:facebook][:id],
+    Rails.application.secrets[:omniauth][:facebook][:secret],
+    scope: 'email public_profile',
+    info_fields: 'id,email,gender,link,name,verified',
+    image_size: { width: 400, height: 400 },
+    provider_ignores_state: true
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'

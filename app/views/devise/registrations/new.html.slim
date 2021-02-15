@@ -17,3 +17,7 @@
     .actions
       = f.submit "Sign up", class: 'btn btn-sm btn-dark mt-4'
       = link_to "Log in", new_user_session_path, class: "btn btn-sm btn-outline-dark ml-2 mt-4"
+    .omniauth
+      - if devise_mapping.omniauthable?
+        - resource_class.omniauth_providers.each do |provider|
+          = link_to image_tag('facebook.png'), omniauth_authorize_path(resource_name, provider), method: :post, class: 'btn btn-sm btn-outline-primary mt-2'

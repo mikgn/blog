@@ -1,3 +1,7 @@
+.color-red {
+  color: red;
+}
+
 .full-screen-height {
   min-height: 100vh;
 }
