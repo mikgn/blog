@@ -8,7 +8,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       flash[:erros] = 'Authentication error'
     end
-
     redirect_to root_path
   end
 end

@@ -22,19 +22,20 @@ class User < ApplicationRecord
     provider_title = access_token.provider
     uid = access_token.uid
     url = "https://facebook.com/#{uid}"
-
     provider = Provider.where(url: url, title: provider_title)
 
     if provider.present?
       provider.user
     else
-      new_user = User.create(email: email, password: Devise.friendly_token.first(16))
+      new_user = User.create(
+        email: email,
+        password: Devise.friendly_token.first(16)
+      )
 
       new_user.providers.create!(
         url: url,
         title: provider_title
       )
-
       new_user
     end
   end
