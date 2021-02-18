@@ -27,20 +27,28 @@ class User < ApplicationRecord
     if provider.present?
       provider.user
     else
-      new_user = User.create(
-        email: email,
-        password: Devise.friendly_token.first(16)
-      )
+      new_user = create_facebook_user(email)
+      add_provider_to_user(new_user, provider_title, url)
 
-      new_user.providers.create!(
-        url: url,
-        title: provider_title
-      )
       new_user
     end
   end
 
   private
+
+  def create_facebook_user(email)
+    User.create(
+      email: email,
+      password: Devise.friendly_token.first(16)
+    )
+  end
+
+  def add_provider_to_user(user, provider_title, url)
+    user.providers.create!(
+      title: provider_title,
+      url: url
+    )
+  end
 
   def set_name
     self.name = "User#{rand(10000000)}" if self.name.blank?
