@@ -1,0 +1,13 @@
+common: &default_settings
+  license_key:  <%= Rails.application.secrets[:newrelic][:license_key] %>
+
+development:
+  <<: *default_settings
+  log_level: debug
+  app_name: 'Blog (Development)'
+  monitor_mode: true
+
+production:
+  <<: *default_settings
+  log_level: info
+  app_name: 'Blog (Production)'

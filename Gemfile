@@ -8,6 +8,7 @@ end
 gem 'omniauth-oauth2', '1.3.1'
 gem 'omniauth-facebook', '5.0.0'
 
+gem 'newrelic_rpm'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
 gem 'rails', '~> 5.1.7'
