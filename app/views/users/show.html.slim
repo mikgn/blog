@@ -8,10 +8,11 @@
 - else
   .no-posts-block
     h4 No posts yet
-    h4
-      span You can
-      | &nbsp;
-      span = link_to 'create', new_post_path
-      | &nbsp;
-      span your first post now
 
+    - if @user == current_user
+      h4
+        span You can
+        | &nbsp;
+        span = link_to 'create', new_post_path
+        | &nbsp;
+        span your first post now

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: :name
+
   has_many :posts, dependent: :destroy
   has_many :comments
   has_many :providers, dependent: :destroy

@@ -1,4 +1,7 @@
 class Tag < ApplicationRecord
+  include PgSearch::Model
+  multisearchable against: :name
+
   REGEX = /\A |#[\w[:alpha:]]+/
 
   self.per_page = 5

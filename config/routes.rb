@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create edit update destroy]
   end
   resources :tags, param: :name
+
+  get '/search', to: 'search#index'
 end

@@ -1,0 +1,36 @@
+- query_string = @query_string
+
+form.form-horizontal.search_form
+  = text_field_tag :query, "", class: "form-control w70", id: 'query', placeholder: "Search.."
+  = submit_tag :submit, style: "display: none;"
+
+- if @q.any?
+  - @q.each do |type, collection|
+    - if type == 'User'
+      h3 Users
+      .collection.users-collection
+        - collection[0..9].each do |user|
+          p = link_to user.content, "users/#{user.searchable_id}"
+          br
+          br
+
+    - elsif type == 'Post'
+      h3 Posts
+      .collection.posts-collection
+        - collection[0..9].each do |post|
+          = link_to post.searchable.title, "posts/#{post.searchable_id}"
+          p.mt-1 = post.searchable.body
+          br
+          br
+
+    - elsif type == 'Tag'
+      h3 Tags
+      .collection.comments-collectio
+        - collection[0..9].each do |tag|
+          = link_to "##{tag.content}", "tags/#{tag.content}"
+          br
+          br
+    br
+    br
+- else
+  h2.mt-4.text-center No search results

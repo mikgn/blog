@@ -17,16 +17,14 @@
     - if current_user == @post.user || current_user&.admin?
       = link_to 'Edit', edit_post_path(@post), class: "btn btn-xs btn-outline-dark mt-2"
 
-.comments-block
-  -if @post.comments.count.positive?
-    h5 Comments
-    .comments-body
-      = render partial: 'comments/comment', collection: @post.comments.except(@new_comment)
-  - else
-    h5 No comments yet
-
 - if user_signed_in?
   .form-block-comment
     .comments-form.mt-4
       h6 New comment
       = render partial: 'comments/form', locals: { comment: @new_comment }
+.comments-block
+  -if @post.comments.count.positive?
+    .comments-body
+      = render partial: 'comments/comment', collection: @post.comments.except(@new_comment)
+  - else
+    h5 No comments yet

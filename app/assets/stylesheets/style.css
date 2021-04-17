@@ -267,3 +267,8 @@
   width: 70%;
   margin: 0 auto;
 }
+
+.highlight {
+  color: #000;
+  font-weight: bold;
+}
