@@ -260,3 +260,10 @@
 .user_avatar {
   text-align: center;
 }
+
+/* search form */
+
+.w70 {
+  width: 70%;
+  margin: 0 auto;
+}

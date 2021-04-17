@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search, against: %i[title body]
+
   self.per_page = 5
 
   belongs_to :user

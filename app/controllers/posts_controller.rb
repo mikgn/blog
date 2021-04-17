@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   before_action :set_post, only: :show
 
   def index
-    @posts = Post.includes(:comments)
-                 .includes(:user)
-                 .includes(:tags)
-                 .active
-                 .sorted_by_newest
-                 .page(params[:page])
+    @q = params[:query].present? ? Post.search(params[:query]) : Post.all
+
+    @posts = @q.includes(:comments, :tags, :user)
+               .active
+               .sorted_by_newest
+               .page(params[:page])
 
     @all_tags = Tag.top30
   end

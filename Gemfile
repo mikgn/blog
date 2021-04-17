@@ -8,6 +8,8 @@ end
 gem 'omniauth-oauth2', '1.3.1'
 gem 'omniauth-facebook', '5.0.0'
 
+gem 'pg_search'
+
 gem 'newrelic_rpm'
 gem 'carrierwave', '~> 2.0'
 gem "mini_magick"
