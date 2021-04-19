@@ -1,5 +1,3 @@
-- query_string = @query_string
-
 form.form-horizontal.search_form
   = text_field_tag :query, "", class: "form-control w70", id: 'query', placeholder: "Search.."
   = submit_tag :submit, style: "display: none;"
@@ -25,7 +23,7 @@ form.form-horizontal.search_form
 
     - elsif type == 'Tag'
       h3 Tags
-      .collection.comments-collectio
+      .collection.tags-collection
         - collection[0..9].each do |tag|
           = link_to "##{tag.content}", "tags/#{tag.content}"
           br
