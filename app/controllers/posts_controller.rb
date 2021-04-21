@@ -22,8 +22,7 @@ class PostsController < ApplicationController
     @new_comment = @post.comments.build(params[:comment])
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @post = current_user.posts.build(post_params)

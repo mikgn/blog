@@ -14,16 +14,15 @@ class CommentsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if user_can_edit_comment?(@comment)
-      if @comment.update(comment_params)
-        redirect_to @post, notice: 'Comment was successfully updated'
-      else
-        render :edit
-      end
+    return unless user_can_edit_comment?(@comment)
+
+    if @comment.update(comment_params)
+      redirect_to @post, notice: 'Comment was successfully updated'
+    else
+      render :edit
     end
   end
 

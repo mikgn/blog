@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :tags, param: :name
 
+  # global search
   get '/search', to: 'search#index'
 end
