@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     @q = params[:query].present? ? Post.search(params[:query]) : Post.all
 
-    @posts = @q.includes(:comments, :tags, :user)
+    @posts = @q.includes(:user, :tags, :post_tags)
                .active
                .sorted_by_newest
                .page(params[:page])

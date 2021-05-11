@@ -23,6 +23,7 @@ gem 'slim'
 gem 'will_paginate', '~> 3.1.0'
 
 group :development do
+  gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

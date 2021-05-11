@@ -1,7 +1,7 @@
 class StatisticsController < AdminController
   def index
     @posts = Post.order(comments_count: :desc).limit(10)
-    # try plain SQL
+    # try plain SQL without comments_count
     #
     # @posts = ActiveRecord::Base.connection.execute(
     #   "SELECT p \
