@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # global search
   get '/search', to: 'search#index'
+
+  # admin
+  get 'admin', to: 'statistics#index'
 end
