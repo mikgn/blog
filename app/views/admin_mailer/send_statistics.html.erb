@@ -1,0 +1,6 @@
+<h1>This Week Top 10 Popular Posts</h1>
+<div class="posts">
+  <% @posts.each do |post| %>
+    <p><%= link_to post.title, post_url(post) %></p>
+  <% end %>
+</div>
