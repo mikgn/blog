@@ -20,6 +20,7 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.7'
 gem 'sass-rails', '~> 5.0'
 gem 'slim'
+gem 'whenever', require: false
 gem 'will_paginate', '~> 3.1.0'
 
 group :development do
