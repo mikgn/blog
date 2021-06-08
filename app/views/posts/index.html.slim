@@ -1,13 +1,16 @@
 - if @posts.any?
+  -if @all_tags.any?
+    .hashtags-block.text-center
+      - @all_tags.each do |tag|
+        span.ml-2 = link_to "##{tag.name}", tag_path(tag)
+
   form.form-horizontal.search_form
     = text_field_tag :query, "", class: "form-control w70", id: 'query', placeholder: "Search.."
     = submit_tag :submit, style: "display: none;"
 
-  -if @all_tags.any?
-    h5.text-center.mt-4 Find posts by tag:
-    .hashtags-block.text-center
-      - @all_tags.each do |tag|
-        span.ml-2 = link_to "##{tag.name}", tag_path(tag)
+  -if params[:query].present?
+    .found-posts-count
+      p Posts found: #{@posts.total_entries}
 
   .posts
     .posts-block
