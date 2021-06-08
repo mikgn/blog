@@ -112,7 +112,7 @@
 /*posts*/
 
 .posts-block {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .post-header {
@@ -271,4 +271,10 @@
 .highlight {
   color: #000;
   font-weight: bold;
+}
+
+.found-posts-count {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 10px 0 0 20px;
 }

@@ -9,6 +9,10 @@
       - @all_tags.each do |tag|
         span.ml-2 = link_to "##{tag.name}", tag_path(tag)
 
+  -if @posts_count.present? && params[:query].present?
+    .found-posts-count
+      p Posts found: #{@posts_count}
+
   .posts
     .posts-block
         = render partial: 'post', collection: @posts, cached: true
