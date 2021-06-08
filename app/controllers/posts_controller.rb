@@ -11,7 +11,7 @@ class PostsController < ApplicationController
                .sorted_by_newest
                .page(params[:page])
 
-    @posts_count = @posts.total_entries if @posts.any?
+    @posts_count = @posts.total_entries if @posts.any? && params[:query].present?
 
     @all_tags = Tag.top30
   end
