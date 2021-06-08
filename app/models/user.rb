@@ -25,7 +25,7 @@ class User < ApplicationRecord
     provider_title = access_token.provider
     uid = access_token.uid
     url = "https://facebook.com/#{uid}"
-    provider = Provider.where(url: url, title: provider_title)
+    provider = Provider.where(url: url, title: provider_title).first
 
     if provider.present?
       provider.user

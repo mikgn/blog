@@ -29,10 +29,12 @@ html
 
       .flash-block
         .message
-          .notice
-            = notice
-          .alert
-            = alert
+          - if flash[:notice]
+            .notice
+              = notice
+          - elsif flash[:alert]
+            .alert
+              = alert
       .container
         = yield
 
