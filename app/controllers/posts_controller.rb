@@ -11,7 +11,7 @@ class PostsController < ApplicationController
                .sorted_by_newest
                .page(params[:page])
 
-    @all_tags = Tag.top30
+    @all_tags = Tag.top
   end
 
   def new
