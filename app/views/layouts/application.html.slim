@@ -11,7 +11,7 @@ html
     .full-screen-height
       .header
         nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.list-unstyled.main-nav
-              = link_to 'Home', root_path, class: "navbar-brand ml-4"
+              = link_to 'Home', root_path, class: "navbar-brand ml-2"
               button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
                 span.navbar-toggler-icon
               .collapse.navbar-collapse#navbarNav
@@ -20,11 +20,11 @@ html
                     = link_to 'New post', new_post_path, class: 'btn btn-primary'
                 .session-btns
                   - if user_signed_in?
-                    = link_to 'My posts', current_user, class: "btn btn-outline-light"
-                    = link_to 'Edit profile', edit_user_path(current_user), class: "btn btn-outline-light ml-2"
-                    = link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light ml-2"
+                    = link_to 'My posts', current_user, class: "btn btn-outline-light mr-1"
+                    = link_to 'Edit profile', edit_user_path(current_user), class: "btn btn-outline-light mr-1"
+                    = link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light"
                   - else
-                    = link_to 'Log in', new_user_session_path, class: "btn btn-outline-light mr-2"
+                    = link_to 'Log in', new_user_session_path, class: "btn btn-outline-light mr-1"
                     = link_to 'Sign up', new_user_registration_path, class: "btn btn-outline-light"
 
       .flash-block
