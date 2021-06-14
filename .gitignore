@@ -18,6 +18,8 @@
 
 .byebug_history
 
+/public/assets
+
 config/cable.yml
 config/secrets.yml
 config/database.yml
